@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BossMechanics : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Boss boss = new Boss();
     void Start()
     {
-        
+        Boss boss_ = new Boss();
     }
 
     // Update is called once per frame

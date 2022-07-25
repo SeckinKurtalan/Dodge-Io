@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public float Health;
+    public float Health = 100;
     public string Name;
+    public int Power = 1;
     void Start()
     {
         
@@ -15,5 +16,9 @@ public class Boss : MonoBehaviour
     void Update()
     {
         
+    }
+    void BossPowerUp()
+    {
+        Power += 1;
     }
 }
