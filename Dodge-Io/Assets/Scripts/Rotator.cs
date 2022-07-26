@@ -35,7 +35,7 @@ public class Rotator : MonoBehaviour
         fountain.transform.Rotate(Vector3.up * speed * Time.deltaTime * control);
         random = Random.Range(1, 2001);
         RandomCheckAndSideChange();
-        Debug.Log(speed);
+        //Debug.Log(speed);
     }
     void waitForTime()
     {

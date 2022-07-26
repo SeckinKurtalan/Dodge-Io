@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class HitAction : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject player;
+    private bool hitStatus=false;
+        
     void Start()
     {
         
@@ -13,6 +15,28 @@ public class HitAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (hitStatus)
+        {
+            player.SetActive(false);
+        }
     }
+
+
+    private void OnTriggerEnter(Collider Collider)
+    {
+        if(Collider.gameObject.CompareTag("Player"))
+        {
+            hitStatus = true;
+        }
+
+    }
+    
+    private void OnTriggerExit(Collider Collider)
+    {
+        if(Collider.gameObject.CompareTag("Player"))
+        {
+            hitStatus = false;
+        }
+    }
+
 }
