@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-    float speed = 70.0f;
+    int speed = 100;
     public GameObject fountain;
+    public GameObject hitzone;
     int random = 0;
     int control = 1;
-    float oldSpeed = 0.0f;
+    int oldSpeed = 0;
+    Vector3 scaleOfZone = new Vector3(2, 13, 0);
+    
     void Start()
     {
         
@@ -16,6 +19,10 @@ public class Rotator : MonoBehaviour
 
     void Update()
     {
+        if (speed % 50 == 0)
+        {
+
+        }
         fountain.transform.Rotate(Vector3.up * speed * Time.deltaTime * control);
         random = Random.Range(1, 2001);
         RandomCheckAndSideChange();
@@ -36,7 +43,7 @@ public class Rotator : MonoBehaviour
         if (random == 500)
         {
             control = control * -1;
-            speed += 1;
+            speed += 2;
         }
     }
 }
