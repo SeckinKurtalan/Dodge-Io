@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HitAction : MonoBehaviour
 {
-    public GameObject water;
+    public GameObject player;
     private bool hitStatus=false;
         
     void Start()
@@ -17,7 +17,7 @@ public class HitAction : MonoBehaviour
     {
         if (hitStatus)
         {
-            Debug.Log(hitStatus);
+            player.SetActive(false);
         }
     }
 
