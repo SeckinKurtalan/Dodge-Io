@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
+    [SerializeField] HitAction GameOverControllerScript;
     int speed = 50;
     public GameObject fountain;
     public GameObject hitzone;
@@ -22,6 +23,10 @@ public class Rotator : MonoBehaviour
 
     void Update()
     {
+        if (GameOverControllerScript.GameOverStatus)
+        {
+            speed = 0;
+        }
         if (speed % 30 == 0 && a == b )
         {          
             if ( c < 7)

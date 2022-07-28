@@ -6,7 +6,7 @@ public class HitAction : MonoBehaviour
 {
     public GameObject player;
     private bool hitStatus=false;
-        
+    public bool GameOverStatus = false;   
     void Start()
     {
         
@@ -18,6 +18,7 @@ public class HitAction : MonoBehaviour
         if (hitStatus)
         {
             player.SetActive(false);
+            GameOverStatus = true;
         }
     }
 
