@@ -5,8 +5,9 @@ using UnityEngine;
 public class BossStatusController : MonoBehaviour
 {
     [HideInInspector]
-    public int health=100; 
-    
+    public int health=100;
+    int x = 100;
+    int i = 0;
     void Start()
     {
         
@@ -15,12 +16,13 @@ public class BossStatusController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       if(health != x)
+        {
+            Debug.Log(health);
+            x = health;
+        }
     }
 
-    public void DecreaseTheBossHealth(int decreaseAmount)
-    {
-        health = decreaseAmount;
-    }
+    
     
 }

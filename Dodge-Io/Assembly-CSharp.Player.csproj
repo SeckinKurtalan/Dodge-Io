@@ -60,6 +60,7 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\HitAction.cs" />
+    <Compile Include="Assets\BossStatusController.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Rotator.cs" />
@@ -68,12 +69,9 @@
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\RingDestroyer.cs" />
     <Compile Include="Assets\GunSpawnGenerator.cs" />
-    <Compile Include="Assets\BossStatusController.cs" />
-    <Compile Include="Assets\LazerGunSpecs.cs" />
-    <Compile Include="Assets\MinigunSpecs.cs" />
-    <Compile Include="Assets\FlameThrowerSpecs.cs" />
-    <Compile Include="Assets\MissleSpecs.cs" />
-    <Compile Include="Assets\ShotgunSpecs.cs" />
+    <Compile Include="Assets\GunPicker.cs" />
+    <Compile Include="Assets\GunSpecGenerator.cs" />
+    <Compile Include="Assets\GunShooter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

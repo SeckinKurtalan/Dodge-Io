@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 72628551}
   - component: {fileID: 72628553}
   - component: {fileID: 72628554}
+  - component: {fileID: 72628555}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -196,10 +197,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c7671e2beae3b4a8a39d55679cf0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentGunDamage: 0
-  CurrentGunRange: 0
-  CurrentGunName: 
-  bossControllerScript: {fileID: 0}
+--- !u!114 &72628555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72628550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba7a357d4e9b5b94a966f4577b2d7ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firingGunName: None
+  guns:
+  - {fileID: 11400000, guid: 04d72dcb38f17a642969b9edf568058f, type: 2}
+  - {fileID: 11400000, guid: 288c36784beaa4147a7209f1a771a700, type: 2}
+  - {fileID: 11400000, guid: 2eeade696a82ab041a4cbd1462d70e9f, type: 2}
+  - {fileID: 11400000, guid: 29eb9f4a295f39a4f97ebe53afeca546, type: 2}
+  - {fileID: 11400000, guid: 6c4b6b622072b0243af71719dca864ad, type: 2}
+  bossScript: {fileID: 1183907547}
+  pickStatusScript: {fileID: 620270557}
 --- !u!1 &110277761
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +608,48 @@ MonoBehaviour:
   player: {fileID: 620270559}
   boundPusherForcePower: 7000
   anim: {fileID: 620270555}
+--- !u!114 &620270557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620270554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9281aaf3c55d6c04b8ed8d39a19969b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCollidingGun: 
+  GameManagerShooter: {fileID: 72628555}
+  pickUpGun:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 620270557}
+        m_TargetAssemblyTypeName: GunPicker, Assembly-CSharp
+        m_MethodName: PassTheGunName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 72628555}
+        m_TargetAssemblyTypeName: GunShooter, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gunPickStatus: 0
 --- !u!65 &620270558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1602,30 +1662,14 @@ GameObject:
   - component: {fileID: 886842867}
   - component: {fileID: 886842866}
   - component: {fileID: 886842865}
-  - component: {fileID: 886842864}
   - component: {fileID: 886842869}
   m_Layer: 0
   m_Name: Shotgun
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &886842864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886842863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c813334e650d3a4f94e107f07be8926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunSpawnerScript: {fileID: 72628554}
-  Damage: 0
-  Range: 0
 --- !u!136 &886842865
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2011,31 +2055,15 @@ GameObject:
   - component: {fileID: 1024406840}
   - component: {fileID: 1024406839}
   - component: {fileID: 1024406838}
-  - component: {fileID: 1024406837}
   - component: {fileID: 1024406843}
   - component: {fileID: 1024406842}
   m_Layer: 0
   m_Name: Lazer Gun
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1024406837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024406836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf41dec30c4204940b9dc35c645e2d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunSpawnerScript: {fileID: 72628554}
-  Damage: 30
-  Range: 100
 --- !u!136 &1024406838
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2282,30 +2310,14 @@ GameObject:
   - component: {fileID: 1252197435}
   - component: {fileID: 1252197434}
   - component: {fileID: 1252197433}
-  - component: {fileID: 1252197432}
   - component: {fileID: 1252197437}
   m_Layer: 0
   m_Name: FlameThrower
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1252197432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252197431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e6a8e811e99c54cb4e9a82a840223c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunSpawnerScript: {fileID: 72628554}
-  Damage: 0
-  Range: 0
 --- !u!136 &1252197433
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2678,30 +2690,14 @@ GameObject:
   - component: {fileID: 1562591880}
   - component: {fileID: 1562591879}
   - component: {fileID: 1562591878}
-  - component: {fileID: 1562591877}
   - component: {fileID: 1562591882}
   m_Layer: 0
   m_Name: Minigun
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1562591877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562591876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbee56f4997fb504ea08cf001216ebf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunSpawnerScript: {fileID: 72628554}
-  Damage: 0
-  Range: 0
 --- !u!136 &1562591878
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2806,7 +2802,6 @@ GameObject:
   - component: {fileID: 1563987278}
   - component: {fileID: 1563987277}
   - component: {fileID: 1563987276}
-  - component: {fileID: 1563987275}
   m_Layer: 0
   m_Name: GameZone
   m_TagString: Untagged
@@ -2814,20 +2809,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1563987275
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563987274}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1563987276
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3108,7 +3089,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16614
+  m_Name: pb_Mesh16644
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3278,30 +3259,14 @@ GameObject:
   - component: {fileID: 2041823996}
   - component: {fileID: 2041823995}
   - component: {fileID: 2041823994}
-  - component: {fileID: 2041823993}
   - component: {fileID: 2041823998}
   m_Layer: 0
   m_Name: Missle
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2041823993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041823992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a21cece9f3e94d438ab3f87fe4aeaaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunSpawnerScript: {fileID: 72628554}
-  Damage: 0
-  Range: 0
 --- !u!136 &2041823994
 CapsuleCollider:
   m_ObjectHideFlags: 0
