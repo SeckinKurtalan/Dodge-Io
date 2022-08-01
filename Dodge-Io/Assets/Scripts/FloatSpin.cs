@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class FloatSpin : MonoBehaviour
 {
+    bool oh = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,4 +18,15 @@ public class FloatSpin : MonoBehaviour
             .SetRelative()
             .SetEase(Ease.Linear);
     }
+
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if(collider.gameObject.tag == "Player" && oh)
+        {
+            Debug.Log("msdlfkþlwf");
+            oh = false;
+        }
+    } 
+
 }
