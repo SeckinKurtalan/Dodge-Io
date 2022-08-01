@@ -33,6 +33,8 @@ public class GunPicker : MonoBehaviour
             collider.gameObject.SetActive(false);
             pickUpGun.Invoke();
             gunSpawnCountController.spawnCount--;
+            int listCount = gunSpawnCountController.spawnedGuns.Count;
+            gunSpawnCountController.spawnedGuns.RemoveAt(listCount-1);
         }
             
 
