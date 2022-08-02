@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2861c8ba0e131b42ad4018de4345f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverControllerScript: {fileID: 0}
+  gameOverControllerScript: {fileID: 643829820}
   GameOverPanel: {fileID: 110277761}
 --- !u!114 &72628554
 MonoBehaviour:
