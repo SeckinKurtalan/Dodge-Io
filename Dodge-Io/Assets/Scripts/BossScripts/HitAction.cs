@@ -23,7 +23,8 @@ public class HitAction : MonoBehaviour
     {
         if(Collider.gameObject.CompareTag("Player"))
         {
-            hitStatus = true;
+            Debug.Log("HitZone'a girildi");
+            InvokeRepeating("HitStatusTrueMaker", 0.5f, 0.0f);  // Burada alana girdiðinde direkt hasar yemesin, gecikmeli olarak baþlasýn istedim.
         }
 
     }
@@ -49,13 +50,18 @@ public class HitAction : MonoBehaviour
     {
         if (hitStatus)
         {
-            Invoke("DamageToPlayer", 1.5f);    //Player alanda durduðu her 1.5 saniye boyunca hasar yiyecek.
+            InvokeRepeating("DamageToPlayer",0.0f ,1f);    //Player alanda durduðu her 1 saniye boyunca hasar yiyecek.
         }
     }
 
     void DamageToPlayer()
     {
+        Debug.Log("Damage atýldý.");
         player.health -= 35;
     }
-    
+    void HitStatusTrueMaker()
+    {
+        hitStatus = true;
+    }
+
 }
