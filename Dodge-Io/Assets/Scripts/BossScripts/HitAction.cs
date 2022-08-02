@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class HitAction : MonoBehaviour
 {
-    public GameObject player;
+    public PlayerController player;
     private bool hitStatus=false;
-    public bool GameOverStatus = false;   
+    public bool GameOverStatus = false;
     void Start()
     {
         
@@ -39,7 +39,7 @@ public class HitAction : MonoBehaviour
 
     void GameOverCheck() // Gameover playerýn caný 0a düþtüðünde olacak.
     {
-        if (player.health >= 0)
+        if ( player.health >= 0)
         {
             GameOverStatus = true;
         }
@@ -57,4 +57,5 @@ public class HitAction : MonoBehaviour
     {
         player.health -= 35;
     }
+    
 }
