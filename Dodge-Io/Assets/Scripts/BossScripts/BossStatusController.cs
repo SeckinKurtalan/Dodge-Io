@@ -33,7 +33,7 @@ public class BossStatusController : MonoBehaviour
         if (health <= 40)
         {
             bossBody.transform.localScale = rageModeBody;
-            bossBody.transform.position = new Vector3(0, rageModeBody.y - 0.05f, 0);  // Burada boss büyüdüðünde yerin altýna girmesin diye pozisyon düzenlendi
+            bossBody.transform.position = new Vector3(0, 0f - 0.05f, 0);  // Burada boss büyüdüðünde yerin altýna girmesin diye pozisyon düzenlendi
         }
     }
     

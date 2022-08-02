@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         Vector3 addedPos = new Vector3(horizontal * speed * Time.deltaTime, 0, vertical * speed * Time.deltaTime);
-        transform.position += addedPos;
+        transform.Translate(addedPos,Space.Self);
         if(transform.position.z < -98)
         {
             player.AddForce(Vector3.forward * boundPusherForcePower);
