@@ -15,11 +15,7 @@ public class HitAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hitStatus)
-        {
-            player.SetActive(false);
-            GameOverStatus = true;
-        }
+        HitControl();
     }
 
 
@@ -40,4 +36,25 @@ public class HitAction : MonoBehaviour
         }
     }
 
+
+    void GameOverCheck() // Gameover playerýn caný 0a düþtüðünde olacak.
+    {
+        if (player.health >= 0)
+        {
+            GameOverStatus = true;
+        }
+
+    }
+    void HitControl() // burada player alana girmiþ durumda ise 1 saniye aralýkla hasar vuracaðýz.
+    {
+        if (hitStatus)
+        {
+            Invoke("DamageToPlayer", 1.5f);    //Player alanda durduðu her 1.5 saniye boyunca hasar yiyecek.
+        }
+    }
+
+    void DamageToPlayer()
+    {
+        player.health -= 35;
+    }
 }
