@@ -11,9 +11,14 @@ public class GunShooter : MonoBehaviour
     [SerializeField] GunSpecGenerator[] guns;
     
     [SerializeField] BossStatusController bossScript;
+
+    [SerializeField] GameObject[] gunsForHolding;
     int firingGunDamage=0;
     float firingGunRange=0;
     [SerializeField] GunPicker pickStatusScript;
+    
+    [SerializeField] GameObject currentGunOnTheList;
+    
     void Start()
     {
         
@@ -42,10 +47,29 @@ public class GunShooter : MonoBehaviour
         bossScript.health -= firingGunDamage;
     }
     
+    
+
+    IEnumerator gunHold()
+    {
+        for(int i = 0; i < gunsForHolding.Length; i++)
+        {
+            foreach(GameObject obj in gunsForHolding)
+            {
+                if(obj.name + "(Clone)" == firingGunName)
+                {
+                    currentGunOnTheList = obj;
+                }
+            }
+        }
+        currentGunOnTheList.SetActive(true);
+        yield return new WaitForSecondsRealtime(3f);
+        currentGunOnTheList.SetActive(false);
+        
+    }
     public void Fire()
     {
         PullTheGunSpecs();
         DamageTheBoss();
+        StartCoroutine(gunHold());
     }
-
 }

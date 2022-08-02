@@ -21,6 +21,7 @@ public class GunPicker : MonoBehaviour
     
     void Update()
     {
+
         
     }
 
