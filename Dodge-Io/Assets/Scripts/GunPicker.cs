@@ -13,6 +13,8 @@ public class GunPicker : MonoBehaviour
     public UnityEvent pickUpGun;
 
     public bool gunPickStatus;
+
+    [SerializeField] PlayerMovement animatorBringer;
     void Start()
     {
         
@@ -29,6 +31,7 @@ public class GunPicker : MonoBehaviour
     {
          if(collider.gameObject.tag == "Gun")
         {
+            animatorBringer.anim.SetLayerWeight(1, 1);
             gunPickStatus = true;
             CurrentCollidingGun = collider.gameObject.name;
             collider.gameObject.SetActive(false);

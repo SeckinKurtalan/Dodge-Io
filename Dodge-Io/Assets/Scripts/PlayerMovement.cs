@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] GunPicker gunPickStatusScript;
+    
     public VariableJoystick joystick;
     public float speed;
     public float turnSpeed;
@@ -11,16 +14,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody player;
     [SerializeField] float boundPusherForcePower;
     public Animator anim;
+
+   
+
     void FixedUpdate()
     {
+        transform.LookAt(LookAtObject.transform);
         float horizontal = joystick.Horizontal;
         float vertical = joystick.Vertical;
 
         JoyStickMovement(horizontal, vertical);
-
-        //Debug.Log("horizontal " + joystick.Horizontal);
-        //Debug.Log("vertical " + joystick.Vertical);
-
+        
+        
     }
 
     void JoyStickMovement(float horizontal, float vertical)
@@ -48,16 +53,21 @@ public class PlayerMovement : MonoBehaviour
         {
             player.velocity = Vector3.zero;
         }
-        
+
+       
         if (horizontal != 0 || vertical != 0)
-        {
-            anim.SetBool("run", true);
-            //Vector3 direction = Vector3.forward * vertical + Vector3.right * horizontal;
-            transform.LookAt(LookAtObject.transform);
-        }
+           {
+                anim.SetBool("run", true);
+
+           }
         else
-        {
-            anim.SetBool("run", false);
-        }
+           {
+                anim.SetBool("run", false);
+           }
+        
+        
+        }   
+        
+        
     }
-}
+
