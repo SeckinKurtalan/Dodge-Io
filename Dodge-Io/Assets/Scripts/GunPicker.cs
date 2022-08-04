@@ -14,8 +14,6 @@ public class GunPicker : MonoBehaviour
 
     UIWeapons changeUI;
     public bool gunPickStatus;
-
-    [SerializeField] PlayerMovement animatorBringer;
     void Start()
     {
         
@@ -32,7 +30,6 @@ public class GunPicker : MonoBehaviour
     {
          if(collider.gameObject.tag == "Gun")
         {
-            animatorBringer.anim.SetLayerWeight(1, 1);
             gunPickStatus = true;
             CurrentCollidingGun = collider.gameObject.name;
             UIWeapons.silah = CurrentCollidingGun;

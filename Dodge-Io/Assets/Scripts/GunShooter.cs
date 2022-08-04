@@ -18,13 +18,8 @@ public class GunShooter : MonoBehaviour
     [SerializeField] GunPicker pickStatusScript;
     
     [SerializeField] GameObject currentGunOnTheList;
-
-    [SerializeField] PlayerMovement animatorBringer;
-
-    [SerializeField] BoxCollider playerBoxCollider;
-
     
-    void Awake()
+    void Start()
     {
         
     }
@@ -67,11 +62,9 @@ public class GunShooter : MonoBehaviour
             }
         }
         currentGunOnTheList.SetActive(true);
-        playerBoxCollider.enabled = false;
         yield return new WaitForSecondsRealtime(3f);
         currentGunOnTheList.SetActive(false);
-        animatorBringer.anim.SetLayerWeight(1, 0);
-        playerBoxCollider.enabled = true;
+        
     }
     public void Fire()
     {

@@ -10,5 +10,4 @@ public class GunSpecGenerator : ScriptableObject
     public int GunDamage = 0;
     public float GunWeight = 0;
     public float GunRange = 0;
-    public ParticleSystem muzzleFlash;
 }
