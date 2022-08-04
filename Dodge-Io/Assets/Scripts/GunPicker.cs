@@ -14,6 +14,8 @@ public class GunPicker : MonoBehaviour
 
     UIWeapons changeUI;
     public bool gunPickStatus;
+
+    [SerializeField] PlayerMovement animatorBringer;
     void Start()
     {
         
@@ -30,12 +32,13 @@ public class GunPicker : MonoBehaviour
     {
          if(collider.gameObject.tag == "Gun")
         {
+            animatorBringer.anim.SetLayerWeight(1, 1);
             gunPickStatus = true;
             CurrentCollidingGun = collider.gameObject.name;
             UIWeapons.silah = CurrentCollidingGun;
             UIWeapons.hand = gunPickStatus;
 
-            GameObject.Find("Current").GetComponent<UIWeapons>().ChangeWeapon();
+            //GameObject.Find("Current").GetComponent<UIWeapons>().ChangeWeapon();
             
             collider.gameObject.SetActive(false);
             pickUpGun.Invoke();
@@ -53,7 +56,7 @@ public class GunPicker : MonoBehaviour
         {
             gunPickStatus = false;
             UIWeapons.hand = gunPickStatus;
-            GameObject.Find("Current").GetComponent<UIWeapons>().ChangeWeapon();
+            //GameObject.Find("Current").GetComponent<UIWeapons>().ChangeWeapon();
             CurrentCollidingGun = "None";
         }
     }
