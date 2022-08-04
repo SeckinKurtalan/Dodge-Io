@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
+    <Compile Include="Assets\UMotionExamples\Miscellaneous\Scripts\ResetPosition.cs" />
     <Compile Include="Assets\Scripts\GameOverPanelController.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Scripts\RingRotator.cs" />
@@ -69,13 +70,13 @@
     <Compile Include="Assets\Scripts\GunSpecGenerator.cs" />
     <Compile Include="Assets\Scripts\RingSpawner.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\Scripts\UIWeapons.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\RingDestroyer.cs" />
     <Compile Include="Assets\Scripts\GunPicker.cs" />
     <Compile Include="Assets\Scripts\Spawn.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\GunSpawnGenerator.cs" />
-    <Compile Include="Assets\UMotionExamples\Miscellaneous\Scripts\ResetPosition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -688,6 +689,10 @@
       <Project>{4DBD860B-A183-2678-A398-F50C863600DE}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
+    <ProjectReference Include="UMotionSourceApplication.csproj">
+      <Project>{0168CC68-8904-9074-B1B8-D0DE9DBAB577}</Project>
+      <Name>UMotionSourceApplication</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{678F83E4-EBD0-7A14-A6C8-30FD9C2E6099}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -724,6 +729,10 @@
       <Project>{99DE7C9F-E185-FEDB-ED7D-725ADEDA0021}</Project>
       <Name>Unity.2D.Sprite.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="UMotionSourceEditor.csproj">
+      <Project>{61E45C94-8A36-2B9E-88DC-4376934CF881}</Project>
+      <Name>UMotionSourceEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.ProBuilder.csproj">
       <Project>{E05BEFC9-DA96-54FF-8140-FBEEB53B0FA6}</Project>
       <Name>Unity.ProBuilder</Name>
@@ -747,14 +756,6 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{FCB2742B-AC73-BACD-DFB2-1E9A6D9E2359}</Project>
       <Name>UnityEngine.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="UMotionSourceApplication.csproj">
-      <Project>{0168CC68-8904-9074-B1B8-D0DE9DBAB577}</Project>
-      <Name>UMotionSourceApplication</Name>
-    </ProjectReference>
-    <ProjectReference Include="UMotionSourceEditor.csproj">
-      <Project>{61E45C94-8A36-2B9E-88DC-4376934CF881}</Project>
-      <Name>UMotionSourceEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
