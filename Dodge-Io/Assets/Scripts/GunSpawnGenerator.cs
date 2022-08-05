@@ -13,6 +13,10 @@ public class GunSpawnGenerator : MonoBehaviour
     float distanceBetweenVectors;
     Vector3 randomPlace;
     Vector3 oldTransform;
+    [HideInInspector] public Vector3 gunScaleMultiplyer= new Vector3(1f,1f,1f);
+    
+
+    
     void Start()
     {
         InstantiateAGun();
@@ -23,11 +27,7 @@ public class GunSpawnGenerator : MonoBehaviour
     }
 
     
-    void Update()
-    {
-        
-    }
-
+    
     void InstantiateAGun()
     {
         
@@ -40,11 +40,14 @@ public class GunSpawnGenerator : MonoBehaviour
             randomPlace = new Vector3(Random.Range(spawnAreas[randomAreaIndex].transform.position.x - 35, spawnAreas[randomAreaIndex].transform.position.x + 35), 11f, Random.Range(spawnAreas[randomAreaIndex].transform.position.z - 35, spawnAreas[randomAreaIndex].transform.position.z + 35));
             distanceBetweenVectors = Vector3.Distance(randomPlace, oldTransform);
         }
-        Instantiate(guns[randomGun],randomPlace,Quaternion.identity);
+        Instantiate(guns[randomGun], randomPlace,Quaternion.identity);
         spawnedGuns.Add(guns[randomGun]);
         spawnCount = spawnedGuns.Count;
+        
     }
 
+    
+    
     void InstantiationController()
     {
         if(spawnCount < 4)

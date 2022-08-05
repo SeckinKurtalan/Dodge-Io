@@ -16,3 +16,5 @@ MonoBehaviour:
   GunDamage: 30
   GunWeight: 0
   GunRange: 0
+  muzzleFlash: {fileID: 5561511960916221471, guid: 2b1dcd7bb0385d44795ccc529438a3e7, type: 3}
+  spawnMultiplyer: {x: 2, y: 2, z: 2}
