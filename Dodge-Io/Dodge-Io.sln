@@ -33,9 +33,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditor.UI", "UnityEdit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Editor", "Unity.Services.Core.Editor.csproj", "{0012B467-03E6-86D1-A085-9ACE60AFB8E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Timeline.Editor", "Unity.Timeline.Editor.csproj", "{E45F80C1-FF59-89CF-DA88-48DD42E03DB5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualStudio.Editor", "Unity.VisualStudio.Editor.csproj", "{9C68C2FF-E1A8-A614-E2D7-E768DA93ABD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Timeline.Editor", "Unity.Timeline.Editor.csproj", "{E45F80C1-FF59-89CF-DA88-48DD42E03DB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro.Editor", "Unity.TextMeshPro.Editor.csproj", "{C2B36D75-949E-98CE-CF09-A9118BF45A69}"
 EndProject
@@ -151,14 +151,14 @@ Global
 		{0012B467-03E6-86D1-A085-9ACE60AFB8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0012B467-03E6-86D1-A085-9ACE60AFB8E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0012B467-03E6-86D1-A085-9ACE60AFB8E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E45F80C1-FF59-89CF-DA88-48DD42E03DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E45F80C1-FF59-89CF-DA88-48DD42E03DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E45F80C1-FF59-89CF-DA88-48DD42E03DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E45F80C1-FF59-89CF-DA88-48DD42E03DB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9C68C2FF-E1A8-A614-E2D7-E768DA93ABD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9C68C2FF-E1A8-A614-E2D7-E768DA93ABD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C68C2FF-E1A8-A614-E2D7-E768DA93ABD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C68C2FF-E1A8-A614-E2D7-E768DA93ABD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E45F80C1-FF59-89CF-DA88-48DD42E03DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E45F80C1-FF59-89CF-DA88-48DD42E03DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E45F80C1-FF59-89CF-DA88-48DD42E03DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E45F80C1-FF59-89CF-DA88-48DD42E03DB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C2B36D75-949E-98CE-CF09-A9118BF45A69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C2B36D75-949E-98CE-CF09-A9118BF45A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2B36D75-949E-98CE-CF09-A9118BF45A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
