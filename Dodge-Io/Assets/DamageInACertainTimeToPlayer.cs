@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DamageInACertainTimeToPlayer : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class DamageInACertainTimeToPlayer : MonoBehaviour
     [SerializeField] float hitTimeGap;
     [SerializeField] int damageAmount;
     [SerializeField] float theFunctionStartGapAfterStartingTheGame;
-    
+
+    public Image FillImage;
+
     void Start()
     {
         InvokeRepeating("hittingPlayer", theFunctionStartGapAfterStartingTheGame, hitTimeGap);
@@ -20,6 +23,7 @@ public class DamageInACertainTimeToPlayer : MonoBehaviour
         if (isHittible)
         {
             playerControllerScript.health -= damageAmount;
+            FillImage.fillAmount = playerControllerScript.health/100;
         }
         
     }

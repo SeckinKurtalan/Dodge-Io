@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject player;
-    public int health;
+    public float health;
     void Start()
     {
         health = 100;
