@@ -30,23 +30,23 @@ public class UIWeapons : MonoBehaviour
         if (hand == true)
         {
             GetComponent<Image>().enabled = hand;
-            if (silah == "FlameThrower(Clone)")
+            if (silah == "FlameThrower")
             {
                 GetComponent<Image>().overrideSprite = FlameThrower;
             }
-            else if (silah == "LazerGun(Clone)")
+            else if (silah == "Lazer Gun")
             {
                 GetComponent<Image>().overrideSprite = LazerGun;
             }
-            else if (silah == "Minigun(Clone)")
+            else if (silah == "Minigun")
             {
                 GetComponent<Image>().overrideSprite = Minigun;
             }
-            else if (silah == "Missle(Clone)")
+            else if (silah == "Missle")
             {
                 GetComponent<Image>().overrideSprite = Missle;
             }
-            else if (silah == "Shotgun(Clone)")
+            else if (silah == "Shotgun")
             {
                 GetComponent<Image>().overrideSprite = Shotgun;
             }

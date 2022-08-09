@@ -4785,9 +4785,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerControllerScript: {fileID: 1234501705}
   isHittible: 1
-  hitTimeGap: 3
-  damageAmount: 30
-  theFunctionStartGapAfterStartingTheGame: 0
+  hitTimeGap: 1
+  damageAmount: 3
+  theFunctionStartGapAfterStartingTheGame: 1
   FillImage: {fileID: 313737376}
 --- !u!65 &2137695774
 BoxCollider:
