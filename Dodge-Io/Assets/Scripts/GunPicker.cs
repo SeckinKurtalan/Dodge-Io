@@ -17,11 +17,14 @@ public class GunPicker : MonoBehaviour
 
     [SerializeField] PlayerMovement animatorBringer;
 
-    
+    [SerializeField] GameObject noGunCamera;
+
+    [SerializeField] GameObject aimCamera;
     
     void Start()
     {
-        
+        noGunCamera.SetActive(true);
+        aimCamera.SetActive(false);
     }
 
     
@@ -65,4 +68,19 @@ public class GunPicker : MonoBehaviour
         
     }
 
+
+    public IEnumerator NoGunCameraSetter()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        noGunCamera.SetActive(true);
+        aimCamera.SetActive(false);
+    }
+
+
+    public void AimCameraSetter()
+    {
+        noGunCamera.SetActive(false);
+        aimCamera.SetActive(true);
+        StartCoroutine(NoGunCameraSetter());
+    }
 }

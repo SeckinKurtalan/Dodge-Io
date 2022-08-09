@@ -86,11 +86,11 @@
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
     <Compile Include="Assets\Scripts\RingDestroyer.cs" />
     <Compile Include="Assets\Scripts\GunPicker.cs" />
+    <Compile Include="Assets\DamageInACertainTimeToPlayer.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerController.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
     <Compile Include="Assets\Scripts\GunSpawnGenerator.cs" />
-    <Compile Include="Assets\DamageInACertainTimeToPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -706,9 +706,17 @@
       <Project>{4DBD860B-A183-2678-A398-F50C863600DE}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{7A637036-2DD2-522E-11BD-5AB9F954505B}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
     <ProjectReference Include="UMotionSourceApplication.csproj">
       <Project>{0168CC68-8904-9074-B1B8-D0DE9DBAB577}</Project>
       <Name>UMotionSourceApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{DCD58287-90A7-5F4F-1C5F-AD9DBC6FF2DF}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{678F83E4-EBD0-7A14-A6C8-30FD9C2E6099}</Project>
@@ -762,10 +770,6 @@
       <Project>{D49B4E36-608F-DF04-1849-00F9033C5CE7}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
-      <Project>{11146B44-78FB-B4D3-9F8F-24BC8A05E077}</Project>
-      <Name>Unity.PlasticSCM.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
       <Project>{8B06F548-3AC8-0EB4-E97E-25F2B7C2F995}</Project>
       <Name>Unity.Rider.Editor</Name>
@@ -773,6 +777,10 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{FCB2742B-AC73-BACD-DFB2-1E9A6D9E2359}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
+      <Project>{11146B44-78FB-B4D3-9F8F-24BC8A05E077}</Project>
+      <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
